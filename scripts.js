@@ -3,7 +3,7 @@ const questInput = document.getElementById("quest-title"); // get the input fiel
 const questList = document.getElementById("quests-list"); // get the list element
 const form = document.querySelector(".quest-form"); // get the form
 const noQuests = document.getElementById("no-quests"); // get the element that will show if there are no quests
-let quests = []
+let quests = localStorage.getItem("quests") ? localStorage.getItem("quests").split(",") : [];
 form.addEventListener("submit", (event) => {
     event.preventDefault(); // prevent the default form submission
     const questTitle = questInput.value; // get the value of the input field
